@@ -1,8 +1,8 @@
 //
 //  Tab2ViewController.swift
 //  Group_project
-//
-//
+//  როგორც იქნა დავასრულეთ პროექტი
+//  
 //
 
 import UIKit

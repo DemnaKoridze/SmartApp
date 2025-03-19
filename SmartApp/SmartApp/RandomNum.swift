@@ -21,7 +21,7 @@ class  RandomNum: UIViewController{
         submitButton()
         jumpToPage()
         
-         
+          
         
     }
     
