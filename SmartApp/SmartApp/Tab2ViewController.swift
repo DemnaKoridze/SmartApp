@@ -8,6 +8,17 @@
 import UIKit
 
 class Tab2ViewController: UIViewController {
+    
+    let firstP: RandomNum
+    init(firstP: RandomNum) {
+        self.firstP = firstP
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     private let numberOneTextField = UITextField()
     private let numberThwoTextField = UITextField()
     private let resultLabel = UILabel()

@@ -11,18 +11,17 @@ class  RandomNum: UIViewController{
     let greenLabel = UILabel()
     let redLabel = UILabel()
     let jumpButton = UIButton()
+    let jumpToProfile = UIButton()
+    let jumpToProfile2 = UIButton()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .black
-        
         inputField()
         greenLab()
         submitButton()
-        jumpToPage()
-        
-          
-        
+        jumpTo2Tab()
+        jumpToProfileTab()
     }
     
     func greenLab(){
@@ -97,15 +96,41 @@ class  RandomNum: UIViewController{
             
     }
     
-    func jumpToPage(){
+    func jumpTo2Tab(){
         jumpButton.translatesAutoresizingMaskIntoConstraints = false
-        jumpButton.setTitle("Next Page", for: .normal)
-        jumpButton.backgroundColor = .green
-        view.addSubview(jumpButton)
+        jumpButton.setTitle("Tab2 Page", for: .normal)
+        jumpButton.backgroundColor = .gray
+        view.addSubview(jumpButton) 
         
         jumpButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 20).isActive = true
         jumpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-       
+        jumpButton.addTarget(self, action: #selector(jumpToNextPage), for: .touchUpInside)
     }
+    
+    
+   @objc func jumpToNextPage(){
+        let jumping = Tab2ViewController(firstP: self)
+        navigationController?.pushViewController(jumping, animated: true)
+    }
+    
+ 
+    
+    func jumpToProfileTab(){
+        jumpToProfile2.translatesAutoresizingMaskIntoConstraints = false
+        jumpToProfile2.setTitle("Profile Page", for: .normal)
+        jumpToProfile2.backgroundColor = .gray
+        view.addSubview(jumpToProfile2)
+        
+        jumpToProfile2.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 20).isActive = true
+        jumpToProfile2.rightAnchor.constraint(equalTo: jumpButton.leftAnchor, constant: -20).isActive = true
+        jumpToProfile2.addTarget(self, action: #selector(jumpToProfilePage2), for: .touchUpInside)
+    }
+    
+    
+   @objc func jumpToProfilePage2(){
+       let jumping = ProfileViewController(randomP: self)
+       navigationController?.pushViewController(jumping, animated: true)
+    }
+    
     
 }
